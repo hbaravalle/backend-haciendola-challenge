@@ -68,16 +68,24 @@ async function update(req, res) {
       return response.error(req, res, "Product not found", 404);
     }
 
+    const fields = {
+      handle,
+      title,
+      description,
+      sku,
+      grams,
+      stock,
+      price,
+      compare_price,
+      barcode,
+    };
     const updates = {};
-    if (handle !== undefined) updates.handle = handle;
-    if (title !== undefined) updates.title = title;
-    if (description !== undefined) updates.description = description;
-    if (sku !== undefined) updates.sku = sku;
-    if (grams !== undefined) updates.grams = stock;
-    if (stock !== undefined) updates.stock = stock;
-    if (price !== undefined) updates.price = price;
-    if (compare_price !== undefined) updates.compare_price = compare_price;
-    if (barcode !== undefined) updates.barcode = barcode;
+
+    for (const [key, value] of Object.entries(fields)) {
+      if (value !== undefined) {
+        updates[key] = value;
+      }
+    }
 
     await product.update(updates);
     return response.success(req, res, "Product updated", 200);

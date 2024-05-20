@@ -12,9 +12,11 @@ class Product extends Model {
         handle: {
           type: DataTypes.STRING,
           unique: true,
+          allowNull: false,
         },
         title: {
           type: DataTypes.STRING,
+          allowNull: false,
         },
         description: {
           type: DataTypes.TEXT,
@@ -22,6 +24,7 @@ class Product extends Model {
         sku: {
           type: DataTypes.BIGINT.UNSIGNED,
           unique: true,
+          allowNull: false,
         },
         grams: {
           type: DataTypes.SMALLINT,
@@ -31,6 +34,7 @@ class Product extends Model {
         },
         price: {
           type: DataTypes.SMALLINT,
+          allowNull: false,
         },
         compare_price: {
           type: DataTypes.SMALLINT,
@@ -39,6 +43,7 @@ class Product extends Model {
           type: DataTypes.BIGINT,
           default: null,
           unique: true,
+          allowNull: false,
           validate: {
             isNumeric: true,
           },
