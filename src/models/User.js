@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
+const bcrypt = require("bcryptjs");
 
 class User extends Model {
   static initModel(sequelize) {
@@ -37,6 +38,19 @@ class User extends Model {
         paranoid: true,
       }
     );
+
+    User.beforeCreate(async (user) => {
+      const hash = await bcrypt.hash(user.password, 10);
+      user.password = hash;
+    });
+
+    User.prototype.validatePassword = async function (password) {
+      try {
+        return await bcrypt.compare(password, this.password);
+      } catch (error) {
+        throw new Error("Error validating password");
+      }
+    };
 
     return User;
   }

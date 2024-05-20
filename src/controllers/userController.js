@@ -1,7 +1,6 @@
+const response = require("../network/response");
 const { User } = require("../models");
 
-async function list() {}
-async function find() {}
 async function create() {}
 async function update() {}
 async function destroy() {}
