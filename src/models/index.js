@@ -16,4 +16,8 @@ const sequelize = new Sequelize(
 User.initModel(sequelize);
 Product.initModel(sequelize);
 
+process.on("exit", () => {
+  sequelize.close();
+});
+
 module.exports = { sequelize, User, Product };

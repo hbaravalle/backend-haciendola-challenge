@@ -22,7 +22,7 @@ async function productSeeder() {
         barcode: normalizedProduct.barcode || null,
       });
     }
-    console.log("[Seeder] Products created!");
+    console.log("[Seeder] Products created");
   } catch (err) {
     console.log(err);
   }

@@ -37,16 +37,18 @@ class Product extends Model {
           allowNull: false,
         },
         compare_price: {
-          type: DataTypes.SMALLINT,
+          type: DataTypes.INTEGER,
         },
         barcode: {
           type: DataTypes.BIGINT,
           default: null,
           unique: true,
-          allowNull: false,
           validate: {
             isNumeric: true,
           },
+        },
+        enabled: {
+          type: DataTypes.BOOLEAN,
         },
       },
       {
@@ -55,6 +57,15 @@ class Product extends Model {
         timestamps: true,
         underscored: true,
         paranoid: true,
+        hooks: {
+          beforeSave: (product) => {
+            if (product.barcode !== null) {
+              product.enabled = true;
+            } else {
+              product.enabled = false;
+            }
+          },
+        },
       }
     );
     return Product;

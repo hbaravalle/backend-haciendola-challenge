@@ -36,13 +36,19 @@ class User extends Model {
         timestamps: true,
         underscored: true,
         paranoid: true,
+        hooks: {
+          beforeSave: (user) => {
+            if (user.changed("password")) {
+              const hashedPassword = bcrypt.hashSync(
+                user.password,
+                bcrypt.genSaltSync(10)
+              );
+              user.password = hashedPassword;
+            }
+          },
+        },
       }
     );
-
-    User.beforeCreate(async (user) => {
-      const hash = await bcrypt.hash(user.password, 10);
-      user.password = hash;
-    });
 
     User.prototype.validatePassword = async function (password) {
       try {
