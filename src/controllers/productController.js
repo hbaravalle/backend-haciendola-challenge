@@ -1,11 +1,36 @@
 const response = require("../network/response");
 const { Op } = require("sequelize");
 const { Product } = require("../models");
+const path = require("path");
 
 async function list(req, res) {
   try {
-    const products = await Product.findAll();
-    return response.success(req, res, products);
+    const limit = 20;
+    const { page = 1 } = req.query;
+    const pageNumber = Number(page);
+    const offset = (pageNumber - 1) * limit;
+
+    const count = await Product.count();
+    const totalPages = Math.ceil(count / limit);
+
+    if (pageNumber > totalPages || pageNumber === 0) {
+      return response.error(req, res, "Products not found", 404);
+    }
+
+    const products = await Product.findAll({ limit, offset });
+
+    const baseUrl = `${req.completeUrl}/products`;
+    const nextPage =
+      page < totalPages ? `${baseUrl}?page=${pageNumber + 1}` : null;
+    const prevPage = page > 1 ? `${baseUrl}?page=${pageNumber - 1}` : null;
+
+    return response.success(req, res, {
+      count,
+      page: pageNumber,
+      next: nextPage,
+      prev: prevPage,
+      products,
+    });
   } catch (err) {
     console.log(err);
     return response.error(req, res);
