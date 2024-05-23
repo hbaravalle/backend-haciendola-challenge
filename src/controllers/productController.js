@@ -5,7 +5,7 @@ const path = require("path");
 
 async function list(req, res) {
   try {
-    const limit = 20;
+    const limit = 10;
     const { page = 1 } = req.query;
     const pageNumber = Number(page);
     const offset = (pageNumber - 1) * limit;
@@ -27,6 +27,7 @@ async function list(req, res) {
     return response.success(req, res, {
       count,
       page: pageNumber,
+      totalPages: totalPages,
       next: nextPage,
       prev: prevPage,
       products,

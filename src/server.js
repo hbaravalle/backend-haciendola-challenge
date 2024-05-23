@@ -1,4 +1,5 @@
 require("dotenv").config();
+const cors = require("cors");
 
 const productRoutes = require("./routes/productRoutes");
 const authRoutes = require("./routes/authRoutes");
@@ -9,6 +10,7 @@ const express = require("express");
 const app = express();
 const PORT = process.env.APP_PORT || 3000;
 
+app.use(cors());
 app.use(express.json());
 app.use(attachBaseUrl);
 
