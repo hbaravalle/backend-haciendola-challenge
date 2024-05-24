@@ -16,6 +16,9 @@ Tener instalados Node y NPM:
 
 - `POST /register` → Registrar un nuevo usuario.
 - `POST /login` → Iniciar sesión de un usuario.
+
+### Mailtrap Test Mode
+
 - `POST /otp` → Enviar un código de un solo uso (OTP) para restablecer la contraseña.
 - `POST /otp-check` → Verificar el código OTP.
 - `POST /reset-password` → Restablecer la contraseña del usuario.
