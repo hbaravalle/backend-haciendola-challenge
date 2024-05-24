@@ -1,6 +1,6 @@
 
 ![portada_haciendola](https://github.com/hbaravalle/backend-haciendola-challenge/assets/24690415/43f3f53c-3178-470e-8103-b52938d38821)
-
+                      
 # [Backend] Challenge Full Stack, Haciendola
 
 ## Prerrequisitos
@@ -119,6 +119,8 @@ MAIL_FROM_NAME="Tu Proyecto"
 4. Revisar la bandeja de entrada en Mailtrap para verificar que el correo de reseteo de contraseña haya sido enviado y recibido correctamente.
 
 ### Video del funcionamiento
+
+https://github.com/hbaravalle/backend-haciendola-challenge/assets/24690415/0f9a0613-81a8-46fc-a41d-ff5989198e03
 
 De esta manera, se podrá probar la funcionalidad de reseteo de contraseña sin necesidad de enviar correos electrónicos reales, asegurando el funcione correctamente en un entorno controlado.
 
