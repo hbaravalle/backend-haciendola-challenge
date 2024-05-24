@@ -58,12 +58,12 @@ async function create(req, res) {
       handle: req.body.handle,
       title: req.body.title,
       description: req.body.description,
-      sku: req.body.sku,
-      grams: req.body.grams,
-      stock: req.body.stock,
-      price: req.body.price,
-      compare_price: req.body.compare_price,
-      barcode: req.body.barcode,
+      sku: Number(req.body.sku),
+      grams: Number(req.body.grams),
+      stock: Number(req.body.stock),
+      price: Number(req.body.price),
+      compare_price: Number(req.body.compare_price),
+      barcode: Number(req.body.barcode),
     });
     return response.success(req, res, "Product created", 201);
   } catch (err) {

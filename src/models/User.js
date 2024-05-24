@@ -26,6 +26,9 @@ class User extends Model {
           type: DataTypes.STRING(100),
           allowNull: false,
         },
+        otp: {
+          type: DataTypes.STRING(6),
+        },
       },
       {
         sequelize,

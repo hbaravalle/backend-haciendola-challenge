@@ -9,7 +9,6 @@ async function productSeeder() {
         const normalizedKey = key.replace(/\s+/g, "_").toLowerCase();
         normalizedProduct[normalizedKey] = product[key];
       }
-      console.log(normalizedProduct.compare_price);
       await Product.create({
         handle: normalizedProduct.handle,
         title: normalizedProduct.title,

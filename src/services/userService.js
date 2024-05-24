@@ -9,7 +9,7 @@ async function find(userIdentifier) {
       },
     });
     if (!user) {
-      throw new Error("User not found");
+      return null;
     }
     return user;
   } catch (err) {
