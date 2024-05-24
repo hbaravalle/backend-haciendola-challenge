@@ -1,4 +1,7 @@
-# [Backend] Challenge Full Stack, Haciendola 
+
+![portada_haciendola](https://github.com/hbaravalle/backend-haciendola-challenge/assets/24690415/43f3f53c-3178-470e-8103-b52938d38821)
+
+# [Backend] Challenge Full Stack, Haciendola
 
 ## Prerrequisitos
 
