@@ -23,6 +23,8 @@ Tener instalados Node y NPM:
 - `POST /api/auth/otp-check` → Verificar el código OTP.
 - `POST /api/auth/reset-password` → Restablecer la contraseña del usuario.
 
+> Mas información para testar el reseteo de contraseña en el apartado 
+
 ### Productos
 
 - `GET /api/products/` → Listar todos los productos. Admite por query string el número de página. Ejemplo: `/products?page=2`.
@@ -96,8 +98,29 @@ Inicia el servidor de desarrollo:
 ```bash
 npm start
 ```
+## Reset de contraseña
 
-El servidor debería estar ejecutándose en el puerto seleccionado.
+Para probar el reseteo de contraseña, se puede utilizar Mailtrap en modo test. A continuación, se indican los pasos a seguir:
+
+1. Crear una cuenta en Mailtrap.
+
+2. Configurar Mailtrap en el proyecto. Generalmente, esto implica establecer las credenciales de Mailtrap en las variables de entorno de la API. Ejemplo de los datos que se pueden encontrar:
+
+```
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=tu_username_mailtrap
+MAIL_PASSWORD=tu_password_mailtrap
+MAIL_FROM_ADDRESS=no-reply@tu-dominio.com
+MAIL_FROM_NAME="Tu Proyecto"
+```
+
+3. Ejecutar (desde el Frontend) el proceso de reseteo de contraseña desde tu aplicación:
+4. Revisar la bandeja de entrada en Mailtrap para verificar que el correo de reseteo de contraseña haya sido enviado y recibido correctamente.
+
+### Video del funcionamiento
+
+De esta manera, se podrá probar la funcionalidad de reseteo de contraseña sin necesidad de enviar correos electrónicos reales, asegurando el funcione correctamente en un entorno controlado.
 
 ---
 
