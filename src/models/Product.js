@@ -27,20 +27,20 @@ class Product extends Model {
           allowNull: false,
         },
         grams: {
-          type: DataTypes.SMALLINT,
+          type: DataTypes.SMALLINT.UNSIGNED,
         },
         stock: {
-          type: DataTypes.SMALLINT,
+          type: DataTypes.SMALLINT.UNSIGNED,
         },
         price: {
-          type: DataTypes.SMALLINT,
+          type: DataTypes.SMALLINT.UNSIGNED,
           allowNull: false,
         },
         compare_price: {
-          type: DataTypes.INTEGER,
+          type: DataTypes.INTEGER.UNSIGNED,
         },
         barcode: {
-          type: DataTypes.BIGINT,
+          type: DataTypes.BIGINT.UNSIGNED,
           default: null,
           unique: true,
           validate: {

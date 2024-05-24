@@ -14,8 +14,8 @@ app.use(cors());
 app.use(express.json());
 app.use(attachBaseUrl);
 
-app.use("/api/products", productRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/products", productRoutes);
 
 app.use((req, res) => {
   return response.error(req, res, "Not found", 404);

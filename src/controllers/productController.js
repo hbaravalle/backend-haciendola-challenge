@@ -17,7 +17,11 @@ async function list(req, res) {
       return response.error(req, res, "Products not found", 404);
     }
 
-    const products = await Product.findAll({ limit, offset });
+    const products = await Product.findAll({
+      limit,
+      offset,
+      order: [["id", "DESC"]],
+    });
 
     const baseUrl = `${req.completeUrl}/products`;
     const nextPage =
