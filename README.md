@@ -14,22 +14,22 @@ Tener instalados Node y NPM:
 
 ### Autenticación
 
-- `POST /register` → Registrar un nuevo usuario.
-- `POST /login` → Iniciar sesión de un usuario.
+- `POST /api/auth/register` → Registrar un nuevo usuario.
+- `POST /api/auth/login` → Iniciar sesión de un usuario.
 
 ### Mailtrap Test Mode
 
-- `POST /otp` → Enviar un código de un solo uso (OTP) para restablecer la contraseña.
-- `POST /otp-check` → Verificar el código OTP.
-- `POST /reset-password` → Restablecer la contraseña del usuario.
+- `POST /api/auth/otp` → Enviar un código de un solo uso (OTP) para restablecer la contraseña.
+- `POST /api/auth/otp-check` → Verificar el código OTP.
+- `POST /api/auth/reset-password` → Restablecer la contraseña del usuario.
 
 ### Productos
 
-- `GET /` → Listar todos los productos. Admite por query string el número de página. Ejemplo: `/products?page=2`.
-- `GET /:product` → Obtener los detalles de un producto específico a través de su SKU o Handle.
-- `POST /` → Crear un nuevo producto.
-- `PUT /:product` → Actualizar un producto existente a través de su SKU o Handle.
-- `DELETE /:product` → Eliminar (soft) un producto a través de su SKU o Handle.
+- `GET /api/products/` → Listar todos los productos. Admite por query string el número de página. Ejemplo: `/products?page=2`.
+- `GET /api/products/:product` → Obtener los detalles de un producto específico a través de su SKU o Handle.
+- `POST /api/products/` → Crear un nuevo producto.
+- `PUT /api/products/:product` → Actualizar un producto existente a través de su SKU o Handle.
+- `DELETE /api/products/:product` → Eliminar (soft) un producto a través de su SKU o Handle.
 
 ## Primeros Pasos
 
