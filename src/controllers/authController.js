@@ -28,6 +28,7 @@ async function login(req, res) {
 
 async function register(req, res) {
   try {
+    console.log(req.body);
     await userService.create(req.body);
     return response.success(req, res, "User registered", 201);
   } catch (err) {

@@ -20,8 +20,7 @@ async function find(userIdentifier) {
 async function create(data) {
   try {
     const newUser = await User.create({
-      firstname: data.firstname,
-      lastname: data.lastname,
+      name: data.name,
       username: data.username,
       email: data.email,
       password: data.password,
