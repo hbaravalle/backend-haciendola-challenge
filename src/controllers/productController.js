@@ -58,6 +58,7 @@ async function find(req, res) {
 
 async function create(req, res) {
   try {
+    console.log(req.body);
     const newProduct = await Product.create({
       handle: req.body.handle,
       title: req.body.title,
