@@ -125,7 +125,7 @@ https://github.com/hbaravalle/backend-haciendola-challenge/assets/24690415/9cc69
 De esta manera, se podrá probar la funcionalidad de reseteo de contraseña sin necesidad de enviar correos electrónicos reales, asegurando el funcione correctamente en un entorno controlado.
 
 ## En desarrollo
-- [ ] Sumar validaciones
+- [ ] Express validator
 - [ ] Creación de middlewares para evitar repetir código
 - [ ] Refactorización y creación de servicios
 
